@@ -1,4 +1,5 @@
 language: java
+sudo: true
 matrix:
   include:
   - jdk: openjdk8
@@ -6,8 +7,5 @@ matrix:
 services:
   - docker
 
-
-deploy:
-  provider: script
-  script: "mvn clean install -DskipTests"
-  skip_cleanup: true  
+before_install:
+  - chmod +x mvnw
