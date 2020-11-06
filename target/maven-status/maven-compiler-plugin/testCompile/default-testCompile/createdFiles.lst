@@ -1,0 +1,5 @@
+com/senior/prevent/integration/FileUploadIntegrationTest.class
+com/senior/prevent/http/FileUploadAPIControllerTest.class
+com/senior/prevent/service/DefaultFileIndexationServiceImplTest.class
+com/senior/prevent/service/DefaultFileUploadServiceImplTest.class
+com/senior/prevent/PreventSeniorApplicationTests.class

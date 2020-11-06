@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layouts/default">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Logs register </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+
+<body>
+<div id="page" layout:fragment="content">
+
+<div class="container my-5">
+    <h3> Create Logs</h3>
+    <div class="card">
+        <div class="card-body">
+            <div class="col-md-10">
+
+                <form action="#" th:object="${form}" th:action="@{/upload/save-manually}" method="post">
+                    <div class="row">
+                        <div class="form-group col-md-8">
+                            <label for="ip" class="col-form-label">IP</label>
+                            <input type="text" class="form-control" id="ip" placeholder="IP" name="ip"/>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="request" class="col-form-label">Request</label>
+                            <input type="text" class="form-control" id="request" placeholder="Request" name="request"/>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="userAgent" class="col-form-label">Agent</label>
+                            <input type="text" class="form-control" id="userAgent" placeholder="Agent"
+                                   name="userAgent"/>
+                        </div>
+
+                        <div class="form-group col-md-8">
+                                <label class="input-group-text" for="status">Options</label>
+                        </br>
+                                    <select id="status" class="form-control form-group col-md-12" th:field="*{status}">
+                                        <option th:each="status : ${allStatus}"
+                                                th:value="${status.status}"
+                                                th:text="${status}">
+                                        </option>
+                                    </select>
+                                </div>
+                        </div>
+
+                            <div class="col-md-6">
+                                <input type="submit" class="btn btn-primary" value="Save">
+                            </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layouts/default">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Edit File</title>
+</head>
+
+<body>
+
+<div id="page" layout:fragment="content">
+
+<div class="container my-5">
+    <h3> Edit File</h3>
+    <div class="card">
+        <div class="card-body">
+            <div class="col-md-10">
+
+                <form action="#" th:action="@{/upload/confirm}" th:object="${editFile}" method="post">
+                    <div class="row">
+                        <div class="form-group col-md-8">
+                            <label for="ip" class="col-form-label">IP</label>
+                            <input type="text" class="form-control" id="ip" placeholder="IP" th:field="*{ip}"/>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="request" class="col-form-label">Request</label>
+                            <input type="text" class="form-control" id="request" placeholder="Request"
+                                   th:field="*{request}"/>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="userAgent" class="col-form-label">Agent</label>
+                            <input type="text" class="form-control" id="userAgent" placeholder="Agent"
+                                   th:field="*{userAgent}"/>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="date" class="col-form-label">Date</label>
+                            <input type="text" class="form-control" id="date" placeholder="Date" th:field="*{date}"/>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="status" class="col-form-label">Status</label>
+                            <input type="text" class="form-control" id="status" placeholder="Status" th:field="*{status}"/>
+                        </div>
+                        <input type="hidden" id="id" th:field="*{id}">
+                        <div class="col-md-6">
+                            <input type="submit" class="btn btn-primary" value="Submit">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
