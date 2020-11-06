@@ -2,8 +2,14 @@ language: java
 matrix:
   include:
   - jdk: openjdk8
-    os: linux
-  - jdk: openjdk8
-    os: osx
+    os: linux  
 services:
   - docker
+
+before_install:
+  - cp .travis.settings.xml $HOME/.m2/settings.xml
+
+deploy:
+  provider: script
+  script: "mvn clean install -DskipTests"
+  skip_cleanup: true  
