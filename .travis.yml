@@ -1,11 +1,10 @@
 language: java
 sudo: true
-matrix:
-  include:
-  - jdk: openjdk8
-    os: linux  
-services:
-  - docker
-
+dist: trusty
+jdk: oraclejdk9
+addons:
+  apt:
+    packages:
+      - oracle-java9-installer
 before_install:
   - chmod +x mvnw
