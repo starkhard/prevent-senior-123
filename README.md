@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/starkhard/prevent-senior-123.svg?branch=master)](https://travis-ci.org/starkhard/prevent-senior-123)
+
+
 # Challenge-Prevent Senior
 Prevent Senior Challenge, where it is necessary to build is an application to create log files FAST, through requests or LOT processing.
 
